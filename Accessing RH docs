@@ -1,0 +1,31 @@
+Red Hat Documentation Access Training:
+
+When accessing content from docs.redhat.com that uses dynamic JavaScript loading (resulting in only CSS/JavaScript without actual content),
+use these URL transformation patterns:
+
+STANDARD URL FORMAT:
+https://docs.redhat.com/en/documentation/{product}/{version}/html/{guide}/index
+
+ALTERNATIVE FORMATS:
+
+1. PDF FORMAT (MOST RELIABLE):
+- Replace "/html/" with "/pdf/"
+- Add ".pdf" extension with naming pattern: {Product_Name}-{version}-{Guide_Name}-en-US.pdf
+- Example:
+  Original: https://docs.redhat.com/en/documentation/red_hat_openshift_logging/6.4/html/release_notes/index
+  PDF: https://docs.redhat.com/en/documentation/red_hat_openshift_logging/6.4/pdf/release_notes/Red_Hat_OpenShift_Logging-6.4-Release_notes-
+en-US.pdf
+
+2. HTML SINGLE FORMAT (SECONDARY OPTION):
+- Replace "/html/" with "/html-single/"
+- Keep rest of path unchanged
+- Example:
+  Original: https://docs.redhat.com/en/documentation/red_hat_openshift_logging/6.4/html/release_notes/index
+  HTML Single: https://docs.redhat.com/en/documentation/red_hat_openshift_logging/6.4/html-single/release_notes/index
+
+USAGE PRIORITY:
+1. Try PDF format first (usually best for content extraction)
+2. Use HTML single as fallback
+3. These patterns are consistent across all Red Hat documentation
+
+Apply these methods automatically when encountering docs.redhat.com URLs that return only page structure without content.
